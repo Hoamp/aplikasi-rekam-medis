@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Dokter;
+use App\Models\Formulir;
 use App\Models\Petugas;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -33,8 +34,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Petugas::create([
-            'username' => 'petugas',
-            'password' => 'petugas'
+            'nama' => 'Ratna Eka Nur Aini',
+            'username' => 'petugas1',
+            'password' => 'petugas1'
+        ]);
+        Petugas::create([
+            'nama' => 'Endang Sri Wahyuningsih',
+            'username' => 'petugas2',
+            'password' => 'petugas2'
+        ]);
+        Petugas::create([
+            'nama' => 'Ida Wahyu',
+            'username' => 'petugas3',
+            'password' => 'petugas3'
         ]);
 
         User::create([
@@ -46,6 +58,10 @@ class DatabaseSeeder extends Seeder
             'username' => "petugas",
             'password' => bcrypt('petugas'),
             'role' => 'petugas'
+        ]);
+
+        Formulir::create([
+            'nama_formulir' => "Resume Medis"
         ]);
     }
 }

@@ -8,36 +8,26 @@
                     <h2>Data pasien</h2>
 
 
-                    <table>
+                    <table class="table">
                         <tr>
-                            <td>Nama </td>
-                            <td> : </td>
-                            <td> {{ $pasien->nama_pasien }}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat </td>
-                            <td> : </td>
-                            <td> {{ $pasien->alamat }}</td>
-                        </tr>
-                        <tr>
-                            <td>No Telepon </td>
-                            <td> : </td>
-                            <td> {{ $pasien->no_telp }}</td>
-                        </tr>
-                        <tr>
-                            <td>Agama </td>
-                            <td> : </td>
-                            <td> {{ $pasien->agama }}</td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Kelamin </td>
-                            <td> : </td>
-                            <td> {{ $pasien->jenis_kelamin }}</td>
-                        </tr>
-                        <tr>
+                            <td>No Rm </td>
+                            <td>Nama Pasien </td>
                             <td>Umur </td>
-                            <td> : </td>
-                            <td> {{ $pasien->umur }}</td>
+                            <td>Jenis Kelamin </td>
+                            <td>Tempat Lahir </td>
+                            <td>Alamat </td>
+                            <td>Agama </td>
+                            <td>No Telp </td>
+                        </tr>
+                        <tr>
+                            <td>{{ $pasien->no_rm }}</td>
+                            <td>{{ $pasien->nama_pasien }}</td>
+                            <td>{{ $pasien->umur }}</td>
+                            <td>{{ $pasien->jenis_kelamin }}</td>
+                            <td>{{ $pasien->tempat_lahir }}</td>
+                            <td>{{ $pasien->alamat }}</td>
+                            <td>{{ $pasien->agama }}</td>
+                            <td>{{ $pasien->no_telp }}</td>
                         </tr>
                     </table>
 

@@ -12,4 +12,8 @@ class Pasien extends Model
     protected $primaryKey = 'no_rm';
 
     protected $guarded = [];
+
+    public function kelengkapan(){
+        return $this->hasMany(Kelengkapan::class, 'no_rm', 'no_rm');
+    }
 }

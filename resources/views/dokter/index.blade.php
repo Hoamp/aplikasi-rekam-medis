@@ -8,26 +8,18 @@
                     <h2>Data dokter</h2>
 
 
-                    <table>
+                    <table class="table">
                         <tr>
-                            <td>Nama </td>
-                            <td> : </td>
-                            <td> {{ $dokter->nama_dokter }}</td>
+                            <td>Nama Dokter</td>
+                            <td>Spesialis</td>
+                            <td>Alamat</td>
+                            <td>No Telp</td>
                         </tr>
                         <tr>
-                            <td>Alamat </td>
-                            <td> : </td>
-                            <td> {{ $dokter->alamat }}</td>
-                        </tr>
-                        <tr>
-                            <td>Spesialis </td>
-                            <td> : </td>
-                            <td> {{ $dokter->spesialis }}</td>
-                        </tr>
-                        <tr>
-                            <td>No Telepon </td>
-                            <td> : </td>
-                            <td> {{ $dokter->no_telp }}</td>
+                            <td>{{ $dokter->nama_dokter }}</td>
+                            <td>{{ $dokter->spesialis }}</td>
+                            <td>{{ $dokter->alamat }}</td>
+                            <td>{{ $dokter->no_telp }}</td>
                         </tr>
                     </table>
 

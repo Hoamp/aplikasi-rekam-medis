@@ -17,6 +17,16 @@ class PasienController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'nama_pasien' => 'required',
+            'alamat' => 'required',
+            'agama' => 'required',
+            'jenis_kelamin' => 'required',
+            'no_telp' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'umur' => 'required',
+        ]);
         Pasien::create([
             'nama_pasien' => $request->nama_pasien,
             'alamat' => $request->alamat,

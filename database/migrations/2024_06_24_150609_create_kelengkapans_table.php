@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('id_formulir')->nullable();
             $table->string('hasil_catatan')->nullable();
             $table->string('hasil_akhir')->nullable();
+            $table->date('tanggal')->nullable();
 
             $table->timestamps();
         });
