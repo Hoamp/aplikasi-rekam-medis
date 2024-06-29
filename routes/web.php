@@ -50,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/dokter', [DokterController::class, 'index'])->name('dokter.index');
+    Route::get('/dokter/tambah', [DokterController::class, 'tambah'])->name('dokter.tambah');
+    Route::post('/dokter', [DokterController::class, 'store'])->name('dokter.store');
+    Route::get('/dokter/hapus/{id}', [DokterController::class, 'hapus'])->name('dokter.hapus');
     
     
     Route::get('/petugas', [PetugasController::class, 'index'])->name('petugas.index');

@@ -8,15 +8,37 @@
     @include('layouts.css')
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-1">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('assets/images/logos/klinik.png') }}"  alt="" class="text-center" width="420px">  
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body shadow">
+                        <h2 class="text-center fw-bolder">Klinik Dokter</h2>
+                        <h2 class="text-center mb-3 fw-bolder">Agung Prihananto</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="text-center">Login Form</h4>
-                    </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body ">
+                        <h4 class="text-center">Login </h4>
+                    
                     @if (session()->has('loginError'))
                         <div class="alert alert-danger col-md-12">{{ session('loginError') }}</div>
                     @endif
@@ -35,6 +57,7 @@
                     </form>
                 </div>
             </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
     @include('layouts.js')

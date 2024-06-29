@@ -1,11 +1,10 @@
     <!-- Sidebar Start -->
-    <aside class="left-sidebar">
+    <aside class="left-sidebar shadow" style="background-color: rgb(227, 221, 221) ">
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="./index.html" class="text-nowrap logo-img">
-              <img src="../assets/images/logos/dark-logo.svg" width="180" alt="" />
-            </a>
+              <img src="{{ asset('assets/images/logos/klinik.png') }}" width="80" alt="" />
+              <h5>Klinik Dokter Agung Prihananto</h5>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8"></i>
             </div>

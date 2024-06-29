@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('spesialis');
             $table->string('no_telp');
-            $table->string('username');
-            $table->string('password');
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
     }
