@@ -11,6 +11,10 @@
                 <form action="{{ route('pasien.store') }}" class="mt-4" method="POST">
                     @csrf
                     <div class="mb-2">
+                        <label for="">no rm</label>
+                        <input type="text" name="no_rm" class="form-control">
+                    </div>
+                    <div class="mb-2">
                         <label for="">nama pasien</label>
                         <input type="text" name="nama_pasien" class="form-control">
                     </div>

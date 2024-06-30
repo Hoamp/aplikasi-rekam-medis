@@ -23,14 +23,14 @@
                         @foreach ($pasien as $p)
                             
                         <tr>
-                            <td>{{ $p->no_rm }}</td>
+                            <td>{{{ $p->no_rm }}}</td>
                             <td>{{ $p->nama_pasien }}</td>
                             <td>{{ $p->alamat }}</td>
                             <td>
                                 @if (auth()->user()->role == 'petugas')
-                                <a href="{{ route('pasien.delete', $p->no_rm) }}" class="btn btn-danger" onclick="return confirm('Yakin hapus data ini?')">Delete</a>
+                                <a href="{{ route('pasien.delete', $p->id_pasien) }}" class="btn btn-danger" onclick="return confirm('Yakin hapus data ini?')">Delete</a>
                                 @endif
-                                <a href="{{ route('pasien.detail', $p->no_rm) }}" class="btn btn-secondary">Detail</a>
+                                <a href="{{ route('pasien.detail', $p->id_pasien) }}" class="btn btn-secondary">Detail</a>
                             </td>
                         </tr>
                         @endforeach

@@ -88,9 +88,9 @@
                                 </td>
                                 <td>
                                     @if ($kelengkapan->hasil_akhir == "Lengkap")
-                                    <h3>{{ $kelengkapan->hasil_akhir }} 100%</h3>
+                                    <h3 class="text-success">{{ $kelengkapan->hasil_akhir }} 100%</h3>
                                     @else
-                                    <h3>{{ $kelengkapan->hasil_akhir }}%</h3>
+                                    <h3 class="text-danger">Tidak Lengkap {{ $kelengkapan->hasil_akhir }}%</h3>
                                     @endif
                                 </td>
                             </tr>

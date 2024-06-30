@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PetugasController;
@@ -56,6 +57,16 @@ Route::middleware(['auth'])->group(function () {
     
     
     Route::get('/petugas', [PetugasController::class, 'index'])->name('petugas.index');
+    Route::get('/petugas/tambah', [PetugasController::class, 'tambah'])->name('petugas.tambah');
+    Route::post('/petugas/store', [PetugasController::class, 'store'])->name('petugas.store');
+    Route::get('/petugas/hapus/{id}', [PetugasController::class, 'hapus'])->name('petugas.hapus');
 
+    Route::get('/formulir', [FormulirController::class, 'index'])->name('formulir.index');
+    Route::get('/formulir/tambah', [FormulirController::class, 'create'])->name('formulir.create');
+    Route::post('/formulir/store', [FormulirController::class, 'store'])->name('formulir.store');
+    Route::get('/formulir/hapus/{id}', [FormulirController::class, 'hapus'])->name('formulir.hapus');
     
+
+    Route::get('/laporan/petugas', [FormulirController::class, 'petugas'])->name('laporan.petugas.index');
+
 });

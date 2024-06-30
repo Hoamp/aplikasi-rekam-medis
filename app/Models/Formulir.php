@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Formulir extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id_formulir';
+
+    protected $guarded = ['id_formulir'];
 }

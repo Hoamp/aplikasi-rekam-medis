@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Petugas extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id_petugas';
+
+    protected $guarded = ['id_petugas'];
 }

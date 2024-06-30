@@ -43,7 +43,7 @@
                                     @if (count($p->kelengkapan) > 0)
                                     <a href="{{ route('kelengkapan.detail', $p->kelengkapan->first()->id_analisis) }}" class="btn btn-warning">Detail Kelengkapan</a>
                                     @else
-                                    <a href="{{ route('kelengkapan.tambah', $p->no_rm) }}" class="btn btn-secondary">Kelengkapan</a>
+                                    <a href="{{ route('kelengkapan.tambah', $p->id_pasien) }}" class="btn btn-secondary">Kelengkapan</a>
                                     @endif
                                 @endif
                             </td>
