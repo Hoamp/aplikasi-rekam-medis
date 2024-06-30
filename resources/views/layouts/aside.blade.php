@@ -83,7 +83,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="/asd" aria-expanded="false">
+                <a class="sidebar-link" href="{{ route('laporan.pasien.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-layout-dashboard"></i>
                   </span>
@@ -91,7 +91,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="/asd" aria-expanded="false">
+                <a class="sidebar-link" href="{{ route('laporan.kelengkapan.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-layout-dashboard"></i>
                   </span>

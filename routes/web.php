@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\KelengkapanController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/formulir/hapus/{id}', [FormulirController::class, 'hapus'])->name('formulir.hapus');
     
 
-    Route::get('/laporan/petugas', [FormulirController::class, 'petugas'])->name('laporan.petugas.index');
+    Route::get('/laporan/petugas', [LaporanController::class, 'petugas'])->name('laporan.petugas.index');
+    Route::get('/laporan/petugas/cetak', [LaporanController::class, 'petugasCetak'])->name('laporan.petugas.cetak');
+
+    Route::get('/laporan/pasien', [LaporanController::class, 'pasien'])->name('laporan.pasien.index');
+    Route::get('/laporan/pasien/cetak', [LaporanController::class, 'pasienCetak'])->name('laporan.pasien.cetak');
+
+    Route::get('/laporan/kelengkapan', [LaporanController::class, 'kelengkapan'])->name('laporan.kelengkapan.index');
+    Route::get('/laporan/kelengkapan/cetak', [LaporanController::class, 'kelengkapanCetak'])->name('laporan.kelengkapan.cetak');
 
 });
