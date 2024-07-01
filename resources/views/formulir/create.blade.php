@@ -12,8 +12,12 @@
                         <div class="mb-2">
                             <label for="">Nama</label>
                             <input type="text" class="form-control" name="nama">
+                            @error('nama')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Tambah</button>
+                        <a href="{{ route('formulir.index') }}" class="btn btn-secondary">Kembali</a>
                     </form>
                 </div>
             </div>

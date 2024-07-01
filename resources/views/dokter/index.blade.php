@@ -8,6 +8,10 @@
                     <h2>Data dokter</h2>
                     <a href="{{ route('dokter.tambah') }}" class="btn btn-primary">Tambah dokter</a>
 
+                    @if (session()->has('success'))
+                        <div class="alert alert-success my-3">{{ session('success') }}</div>
+                    @endif
+
                     <table class="table">
                         <tr>
                             <td>Nama Dokter</td>
@@ -23,7 +27,7 @@
                                 <td>{{ $dokter->alamat }}</td>
                                 <td>{{ $dokter->no_telp }}</td>
                                 <td>
-                                    <a href="{{ route('dokter.hapus', $dokter->id_dokter) }}" class="btn btn-danger">Hapus</a>
+                                    <a href="{{ route('dokter.hapus', $dokter->id_dokter) }}" class="btn btn-danger" onclick="return confirm('Yakin hapus?')">Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

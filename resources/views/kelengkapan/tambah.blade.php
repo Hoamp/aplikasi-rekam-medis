@@ -60,8 +60,10 @@
                                     <input type="date" name="tanggal" id="" class="form-control">
                                 </div>
                             </div>
+                            @error('tanggal')<small class="text-danger">{{ $message }}</small> @enderror
                             <div class="mb-2">
-                                <h4 for="">No Rm <span class="text-danger">*</span></h4>
+                                <h4 for="">No Rm <span class="text-danger">*</span> @error('no_rm')<small class="text-danger">{{ $message }}</small> @enderror </h4>
+                                
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="no rm" id="" value="Ada">
@@ -74,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Nama <span class="text-danger">*</span></h4>
+                                <h4 for="">Nama <span class="text-danger">*</span> @error('nama_pasien')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="nama pasien" id="" value="Ada">
@@ -87,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Umur<span class="text-danger">*</span></h4>
+                                <h4 for="">Umur<span class="text-danger">*</span> @error('umur')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="umur" id="" value="Ada">
@@ -100,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Alamat <span class="text-danger">*</span></h4>
+                                <h4 for="">Alamat <span class="text-danger">*</span> @error('alamat')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="alamat" id="" value="Ada">
@@ -121,7 +123,7 @@
                             <h2 class="mb-4">Review Pelaporan</h2>
                             <div class="mb-2">
                                 <div class="row">
-                                    <h4>Pemeriksaan <span class="text-danger">*</span></h4>
+                                    <h4>Pemeriksaan <span class="text-danger">*</span> @error('pemeriksaan')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                     <div class="col-md-6">
                                         <input type="radio" name="pemeriksaan" id="" value="Ada">
                                         <label for="">Ada</label>
@@ -132,7 +134,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <h4>Terapi <span class="text-danger">*</span></h4>
+                                    <h4>Terapi <span class="text-danger">*</span> @error('terapi')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                     <div class="col-md-6">
                                         <input type="radio" name="terapi" id="" value="Ada">
                                         <label for="">Ada</label>
@@ -151,7 +153,7 @@
                         <div class="card-body">
                             <h2 class="mb-4">Review Pencatatan</h2>
                             <div class="mb-2">
-                                <h4 for="">Tidak ada tipe-x<span class="text-danger">*</span></h4>
+                                <h4 for="">Tidak ada tipe-x<span class="text-danger">*</span> @error('tidak_ada_tipe_x')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="tidak ada tipe x" id="" value="Ada">
@@ -164,7 +166,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Tidak ada coretan<span class="text-danger">*</span></h4>
+                                <h4 for="">Tidak ada coretan<span class="text-danger">*</span> @error('tidak_ada_coretan')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="tidak_ada_coretan" id="" value="Ada">
@@ -177,7 +179,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Tidak ada singkatan baku<span class="text-danger">*</span></h4>
+                                <h4 for="">Tidak ada singkatan baku<span class="text-danger">*</span> @error('tidak_ada_singkatan_baku')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="tidak ada singkatan baku" id="" value="Ada">
@@ -197,7 +199,7 @@
                         <div class="card-body">
                             <h2 class="mb-4">Autentifikasi</h2>
                             <div class="mb-2">
-                                <h4 for="">Tanda tangan<span class="text-danger">*</span></h4>
+                                <h4 for="">Tanda tangan<span class="text-danger">*</span> @error('tanda_tangan')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="tanda_tangan" id="" value="Ada">
@@ -210,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <h4 for="">Nama terang<span class="text-danger">*</span></h4>
+                                <h4 for="">Nama terang<span class="text-danger">*</span> @error('nama_terang')<small class="text-danger">{{ $message }}</small> @enderror </h4>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="radio" name="nama_terang" id="" value="Ada">

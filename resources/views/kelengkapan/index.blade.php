@@ -22,6 +22,10 @@
                         </form>
                     </div>
                 </div>
+                @if (session()->has('success'))
+                    <div class="alert alert-success my-3">{{ session('success') }}</div>
+                @endif
+
                 <table class="table">
                     <thead>
                         <tr>

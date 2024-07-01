@@ -6,9 +6,13 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h2>Data Pasien</h2>
+                <h2 class="mb-3">Data Pasien</h2>
                 @if (auth()->user()->role == 'petugas')
                 <a href="{{ route('pasien.tambah') }}" class="btn btn-primary">Tambah Pasien</a>
+                @endif
+
+                @if (session()->has('success'))
+                    <div class="alert alert-success my-3">{{ session('success') }}</div>
                 @endif
                 <table class="table">
                     <thead>

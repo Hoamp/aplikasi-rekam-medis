@@ -33,12 +33,12 @@ class DokterController extends Controller
             'password' => ' ',
         ]);
 
-        return redirect()->route('dokter.index');
+        return redirect()->route('dokter.index')->with('success', "Sukses menambah dokter");
     }
 
     public function hapus($id){
         $dokter = Dokter::find($id);
         $dokter->delete();
-        return redirect()->route('dokter.index');
+        return redirect()->route('dokter.index')->with('success', "Sukses menghapus dokter");
     }
 }

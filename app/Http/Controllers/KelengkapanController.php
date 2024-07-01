@@ -33,6 +33,8 @@ class KelengkapanController extends Controller
             'nama_pasien' => 'required',
             'umur' => 'required',
             'alamat' => 'required',
+            'terapi' => 'required',
+            'pemeriksaan' => 'required',
             'tidak_ada_tipe_x' => 'required',
             'tidak_ada_coretan' => 'required',
             'tanggal' => 'required',
@@ -77,7 +79,7 @@ class KelengkapanController extends Controller
                 continue;
             }
 
-            if($val == "Ada"){
+            if($val == "Ada" || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
                 $jumlahAda++;
             }else{
                 $jumlahTidakAda++;
@@ -105,7 +107,7 @@ class KelengkapanController extends Controller
             'hasil_catatan' => $hasil_catatan
         ]);
 
-        return redirect()->route('kelengkapan.index');
+        return redirect()->route('kelengkapan.index')->with('success', 'Sukses analisis kelengkapan pasien');
     }
 
 
@@ -153,7 +155,19 @@ class KelengkapanController extends Controller
             $item_review = $key;
             $hasil_item = $val;
 
-            
+            if($count == 1){
+                continue;
+            } elseif($count >= 2 && $count <= 6){
+                $nama_review = "identifikasi";  
+            } elseif($count >= 7 && $count <= 8 ){
+                $nama_review = "pelaporan";  
+            }elseif($count >= 9 && $count <= 11 ){
+                $nama_review = "pencatatan";  
+            }elseif($count >= 12 && $count <= 13){
+                $nama_review = "autentifikasi";  
+            }else {
+                continue;
+            }
 
             if($key == '_token' || $key == "no_rm_pasien" || $key == "kelengkapan" || $key == "id_formulir"){
                 continue;
@@ -164,7 +178,7 @@ class KelengkapanController extends Controller
                 'hasil_item' => $hasil_item
             ]);
 
-            if($val == "Ada"){
+            if($val == "Ada" || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
                 $jumlahAda++;
             }else{
                 $jumlahTidakAda++;
@@ -186,7 +200,7 @@ class KelengkapanController extends Controller
             'tanggal' => $tanggal
         ]);
 
-        return redirect()->route('kelengkapan.index');
+        return redirect()->route('kelengkapan.index')->with('success', 'Sukses edit analisis kelengkapan pasien');
     }
 
     public function detail($id){

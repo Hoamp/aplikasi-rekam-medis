@@ -41,14 +41,14 @@ class PasienController extends Controller
             'umur' => $request->umur,
         ]);
 
-        return redirect()->route('pasien.index');
+        return redirect()->route('pasien.index')->with('success', 'Sukses menambah pasien');
     }
     
     public function delete($id){
         $pasien = Pasien::find($id);
         $pasien->delete();
         
-        return redirect()->route('pasien.index');
+        return redirect()->route('pasien.index')->with('success', "Sukses menghapus pasien");
     }
 
     public function detail($id){

@@ -26,12 +26,12 @@ class FormulirController extends Controller
             'nama_formulir' => $request->nama
         ]);
 
-        return redirect()->route('formulir.index');
+        return redirect()->route('formulir.index')->with('success', "Sukses menambah formulir");
     }
 
     public function hapus($id){
         $formulir = Formulir::find($id);
         $formulir->delete();
-        return redirect()->route('formulir.index');
+        return redirect()->route('formulir.index')->with('success', "Sukses menghapus formulir");
     }
 }

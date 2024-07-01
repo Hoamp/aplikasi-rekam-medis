@@ -8,6 +8,11 @@
                     <h2>Data formulir</h2>
                     <a href="{{ route('formulir.create') }}" class="btn btn-primary">Tambah formulir</a>
 
+                    @if (session()->has('success'))
+                        <div class="alert alert-success my-3">{{ session('success') }}</div>
+                    @endif
+
+                    
                     <table class="table">
                         <tr>
                             <td>Id Formulir</td>
@@ -22,7 +27,7 @@
                                     @if ($p->id_formulir == 1)
                                         
                                     @else
-                                    <a href="{{ route('formulir.hapus', $p->id_formulir) }}" class="btn btn-danger">Hapus</a>
+                                    <a href="{{ route('formulir.hapus', $p->id_formulir) }}" class="btn btn-danger" onclick="return confirm('Yakin hapus?')">Hapus</a>
                                     @endif
                                 </td>
                             </tr>

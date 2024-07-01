@@ -11,7 +11,7 @@
                     <a href="{{ route('kelengkapan.edit', $kelengkapan->id_analisis) }}" class="my-3 btn btn-warning">Edit</a>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-1">
+                            <div class="col-md-2">
                                 Nama
                             </div>
                             <div class="col-md-1">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-1">
+                            <div class="col-md-2">
                                 Umur
                             </div>
                             <div class="col-md-1">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-1">
+                            <div class="col-md-2">
                                 Alamat
                             </div>
                             <div class="col-md-1">
@@ -45,6 +45,32 @@
                             </div>
                             <div class="col-md-8">
                                 {{ $kelengkapan->pasien->alamat }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="row">
+                            <div class="col-md-2">
+                                Tanggal Lahir
+                            </div>
+                            <div class="col-md-1">
+                                :
+                            </div>
+                            <div class="col-md-8">
+                                {{ $kelengkapan->pasien->tanggal_lahir }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="row">
+                            <div class="col-md-2">
+                                Jenis Kelamin
+                            </div>
+                            <div class="col-md-1">
+                                :
+                            </div>
+                            <div class="col-md-8">
+                                {{ $kelengkapan->pasien->jenis_kelamin }}
                             </div>
                         </div>
                     </div>
@@ -81,7 +107,11 @@
                                     <ul>
                                         @foreach ($detailKelengkapan as $d)
                                             @if ($d->hasil_item !== "Ada")
-                                            <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                @if ($d->nama_review == 'pencatatan' && $d->hasil_item == "Tidak Ada")
+                                                    
+                                                @else
+                                                    <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                @endif
                                             @endif
                                         @endforeach
                                     </ul>
