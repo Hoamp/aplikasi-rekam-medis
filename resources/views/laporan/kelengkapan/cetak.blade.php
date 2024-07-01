@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center">Laporan Kelengkapan Pasien Klinik</h1>
-        <h1 class="text-center">Dokter Agung Prihananto</h1>
+        <h2 class="text-center">Laporan Hasil Analisis</h2>
+        <h2 class="text-center">Kelengkapan Formulir Resume Medis</h2>
 
         <hr>
         <table class="table text-center">

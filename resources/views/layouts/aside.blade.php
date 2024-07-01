@@ -12,6 +12,7 @@
           <!-- Sidebar navigation-->
           <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
+              <hr>
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Data Master</span>
@@ -19,7 +20,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="/" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-home"></i>
                   </span>
                   <span class="hide-menu">Dashboard</span>
                 </a>
@@ -27,7 +28,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('pasien.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-users"></i>
                   </span>
                   <span class="hide-menu">Pasien</span>
                 </a>
@@ -35,7 +36,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('dokter.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-stethoscope"></i>
                   </span>
                   <span class="hide-menu">Dokter</span>
                 </a>
@@ -43,7 +44,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('petugas.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-nurse"></i>
                   </span>
                   <span class="hide-menu">Petugas</span>
                 </a>
@@ -51,12 +52,13 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('formulir.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-file-info"></i>
                   </span>
                   <span class="hide-menu">Formulir</span>
                 </a>
               </li>
 
+              <hr>
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Analisis</span>
@@ -64,12 +66,13 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('kelengkapan.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-list-details"></i>
                   </span>
                   <span class="hide-menu">Kelengkapan</span>
                 </a>
               </li>
 
+              <hr>
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Laporan</span>
@@ -77,7 +80,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('laporan.petugas.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-files"></i>
                   </span>
                   <span class="hide-menu">Laporan Petugas</span>
                 </a>
@@ -85,7 +88,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('laporan.pasien.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-files"></i>
                   </span>
                   <span class="hide-menu">Laporan Pasien</span>
                 </a>
@@ -93,9 +96,25 @@
               <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('laporan.kelengkapan.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-files"></i>
                   </span>
                   <span class="hide-menu">Laporan Kelengkapan</span>
+                </a>
+              </li>
+
+
+              
+              {{-- <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Auth</span>
+              </li> --}}
+              <hr>
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('logout') }}" aria-expanded="false" onclick="return confirm('logout dari sistem?')">
+                  <span>
+                    <i class="ti ti-logout"></i>
+                  </span>
+                  <span class="hide-menu">Logout</span>
                 </a>
               </li>
             </ul>

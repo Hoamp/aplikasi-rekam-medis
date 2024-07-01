@@ -27,6 +27,9 @@
                         <tr>
                             <td>No Rm</td>
                             <td>Nama</td>
+                            <td>Umur</td>
+                            <td>Jenis Kelamin</td>
+                            <td>Tanggal Lahir</td>
                             <td>Alamat</td>
                             <td>Aksi</td>
                         </tr>
@@ -37,6 +40,9 @@
                         <tr>
                             <td>{{ $p->no_rm }}</td>
                             <td>{{ $p->nama_pasien }}</td>
+                            <td>{{ $p->umur }}</td>
+                            <td>{{ $p->jenis_kelamin }}</td>
+                            <td>{{ $p->tanggal_lahir }}</td>
                             <td>{{ $p->alamat }}</td>
                             <td>
                                 @if (auth()->user()->role == "petugas")

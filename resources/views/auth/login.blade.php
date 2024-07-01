@@ -36,24 +36,24 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="card shadow">
-                    <div class="card-body ">
+                    <div class="card-body " style="background-color: rgb(227, 221, 221) ">
                         <h4 class="text-center">Login </h4>
                     
                     @if (session()->has('loginError'))
-                        <div class="alert alert-danger col-md-12">{{ session('loginError') }}</div>
+                        <div class="alert alert-danger col-md-12 ">{{ session('loginError') }}</div>
                     @endif
 
                     <form action="{{ route('authenticate') }}" method="POST" class="p-4">
                         @csrf
                         <div class="mb-2">
-                            <label for="">Username</label>
-                            <input type="text" class="form-control" name="username">
+                            <h5 for="" class="fw-bolder">Username</h5>
+                            <input type="text" class="form-control bg-primary text-white" name="username">
                         </div>
-                        <div class="mb-2">
-                            <label for="">Password</label>
-                            <input type="password" class="form-control" name="password">
+                        <div class="mb-5">
+                            <h5 for="" class="fw-bolder">Password</h5>
+                            <input type="password" class="form-control bg-primary text-white" name="password">
                         </div>
-                        <button type="submit" class="btn btn-primary col-md-12">Login</button>
+                        <button type="submit" class="btn btn-secondary col-md-12">Login</button>
                     </form>
                 </div>
             </div>

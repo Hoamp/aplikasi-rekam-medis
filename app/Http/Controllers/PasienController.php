@@ -30,7 +30,7 @@ class PasienController extends Controller
         ]);
 
         Pasien::create([
-            'no_rm' => "P$request->no_rm",
+            'no_rm' => $request->no_rm,
             'nama_pasien' => $request->nama_pasien,
             'alamat' => $request->alamat,
             'agama' => $request->agama,
