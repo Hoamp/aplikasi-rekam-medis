@@ -13,7 +13,13 @@ class KelengkapanController extends Controller
 {
     public function index(Request $request){
         if(request('cari')){
-            $pasien = Pasien::with(['kelengkapan'])->where('no_rm', request('cari'))->paginate(1);
+            $pasien = Pasien::where('no_rm', request('cari'))->get();
+            
+            if(count($pasien) !== 0){
+                $pasien = Pasien::with(['kelengkapan'])->where('no_rm', request('cari'))->paginate(7);                
+            }else{
+                $pasien = Pasien::with(['kelengkapan'])->where('nama_pasien', 'like', "%".request('cari')."%")->paginate(7);
+            }
         }else{
             $pasien = Pasien::with(['kelengkapan'])->latest()->paginate(7);
         }
@@ -79,7 +85,7 @@ class KelengkapanController extends Controller
                 continue;
             }
 
-            if($val == "Ada" || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
+            if(($nama_review !== 'pencatatan' && $val == "Ada") || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
                 $jumlahAda++;
             }else{
                 $jumlahTidakAda++;
@@ -145,7 +151,6 @@ class KelengkapanController extends Controller
         $hasilAkhirKelengkapan = 0;
         $hasil_catatan = [];
 
-        // return $request;
 
         $tanggal = $data['tanggal'];
         $data['tanggal'] = "Ada";
@@ -178,7 +183,7 @@ class KelengkapanController extends Controller
                 'hasil_item' => $hasil_item
             ]);
 
-            if($val == "Ada" || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
+            if(($nama_review !== 'pencatatan' && $val == "Ada") || ($nama_review == 'pencatatan' && $hasil_item == "Tidak Ada")){
                 $jumlahAda++;
             }else{
                 $jumlahTidakAda++;
@@ -204,12 +209,16 @@ class KelengkapanController extends Controller
     }
 
     public function detail($id){
-        $pasien = Pasien::find($id);
-
-        $kelengkapan = Kelengkapan::with(['pasien'])->where('no_rm', $pasien->no_rm)->first();
+        $kelengkapan = Kelengkapan::with(['pasien'])->where('id_analisis',$id)->first();
 
         $detailKelengkapan = DetailKelengkapan::where('id_analisis', "=",$kelengkapan->id_analisis)->get();
 
-        return view('kelengkapan.detail', compact('pasien', 'kelengkapan','detailKelengkapan'));
+        return view('kelengkapan.detail', compact('kelengkapan','detailKelengkapan'));
+    }
+
+    public function cetak($id){
+        $kelengkapan = Kelengkapan::with(['pasien', 'detail'])->where('id_analisis', $id)->first();
+
+        return view('kelengkapan.cetak', compact('kelengkapan'));
     }
 }

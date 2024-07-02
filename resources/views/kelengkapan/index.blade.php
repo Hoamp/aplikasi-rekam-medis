@@ -13,7 +13,7 @@
                             <label for="">Cari pasien</label>
                             <div class="row">
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="cari" placeholder="Cari berdasarkan No Rm">
+                                    <input type="text" class="form-control" name="cari" placeholder="Cari No Rm / Nama">
                                 </div>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-success" >Cari</button>

@@ -7,69 +7,82 @@
                 <div class="card-body">
                     <h1>Detail Kelengkapan pasien</h1>
                     <h5>Tanggal : {{ $kelengkapan->tanggal }}</h5>
-                    <a href="" class="my-3 btn btn-secondary">Cetak</a>
+                    <a href="{{ route('kelengkapan.cetak', $kelengkapan->id_analisis) }}" class="my-3 btn btn-secondary">Cetak</a>
                     <a href="{{ route('kelengkapan.edit', $kelengkapan->id_analisis) }}" class="my-3 btn btn-warning">Edit</a>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-2">
-                                Nama
+                            <div class="col-2">
+                                No rm
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 :
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
+                                {{ $kelengkapan->pasien->no_rm }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="row">
+                            <div class="col-2">
+                                Nama
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-8">
                                 {{ $kelengkapan->pasien->nama_pasien }}
                             </div>
                         </div>
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 Umur
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 :
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 {{ $kelengkapan->pasien->umur }}
                             </div>
                         </div>
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 Alamat
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 :
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 {{ $kelengkapan->pasien->alamat }}
                             </div>
                         </div>
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 Tanggal Lahir
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 :
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 {{ $kelengkapan->pasien->tanggal_lahir }}
                             </div>
                         </div>
                     </div>
                     <div class="mb-2">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 Jenis Kelamin
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 :
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 {{ $kelengkapan->pasien->jenis_kelamin }}
                             </div>
                         </div>
@@ -106,12 +119,18 @@
                                 <td>
                                     <ul>
                                         @foreach ($detailKelengkapan as $d)
-                                            @if ($d->hasil_item !== "Ada")
-                                                @if ($d->nama_review == 'pencatatan' && $d->hasil_item == "Tidak Ada")
+                                            @if ($d->nama_review == 'pencatatan')
+                                                @if ($d->hasil_item == "Tidak Ada")
                                                     
+                                                    @else
+                                                        <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                    @endif
                                                 @else
-                                                    <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
-                                                @endif
+                                                    @if ($d->hasil_item == "Ada")
+                                                        
+                                                    @else
+                                                        <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                    @endif
                                             @endif
                                         @endforeach
                                     </ul>

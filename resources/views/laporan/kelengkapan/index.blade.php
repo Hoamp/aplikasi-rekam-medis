@@ -27,12 +27,18 @@
                                 <td>
                                     <ul>
                                         @foreach ($p->detail as $d)
-                                            @if ($d->hasil_item !== "Ada")
-                                                @if ($d->nama_review == 'pencatatan' && $d->hasil_item == "Tidak Ada")
+                                            @if ($d->nama_review == 'pencatatan')
+                                                @if ($d->hasil_item == "Tidak Ada")
                                                     
+                                                    @else
+                                                        <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                    @endif
                                                 @else
-                                                    <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
-                                                @endif
+                                                    @if ($d->hasil_item == "Ada")
+                                                        
+                                                    @else
+                                                        <li><h5>~ {{ $d->nama_review }} : {{ $d->item_review }}</h5></li>
+                                                    @endif
                                             @endif
                                         @endforeach
                                     </ul>

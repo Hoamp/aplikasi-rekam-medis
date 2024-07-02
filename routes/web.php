@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/kelengkapan/detail/{id}', [KelengkapanController::class, 'detail'])->name('kelengkapan.detail');
     Route::get('/kelengkapan/edit/{id}', [KelengkapanController::class, 'editKelengkapan'])->name('kelengkapan.edit');
     Route::post('/kelengkapan/update', [KelengkapanController::class, 'updateKelengkapan'])->name('kelengkapan.update');
+    Route::get('/kelengkapan/cetak/{id}', [KelengkapanController::class, 'cetak'])->name('kelengkapan.cetak');
     
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
