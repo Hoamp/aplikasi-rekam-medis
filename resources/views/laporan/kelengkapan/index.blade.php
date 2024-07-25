@@ -6,14 +6,42 @@
             <div class="card">
                 <div class="card-body">
                     <h2>Data kelengkapan</h2>
+                    <form action="{{ route('laporan.kelengkapan.cetak') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="">Tanggal Awal</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input type="date" class="form-control" name="awal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="">Tanggal Akhir</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input type="date" class="form-control" name="akhir">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <a href="{{ route('laporan.kelengkapan.cetak') }}" class="btn btn-primary">Cetak</a>
+                        <button type="submit" class="btn btn-primary">Cetak</button>
+                    </form>
+
+                    {{-- <a href="{{ route('laporan.kelengkapan.cetak') }}" class="btn btn-primary">Cetak</a> --}}
 
                     <table class="table">
                         <thead>
                             <tr>
                                 <td>No Rm</td>
                                 <td>Nama pasien</td>
+                                <td>Tanggal</td>
                                 <td>Hasil catatan</td>
                                 <td>Hasil akhir</td>
                             </tr>
@@ -24,6 +52,7 @@
                             <tr>
                                 <td>{{ $p->no_rm }}</td>
                                 <td>{{ $p->pasien->nama_pasien }}</td>
+                                <td>{{ $p->tanggal }}</td>
                                 <td>
                                     <ul>
                                         @foreach ($p->detail as $d)

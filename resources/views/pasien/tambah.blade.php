@@ -14,7 +14,12 @@
                     @csrf
                     <div class="mb-2">
                         <label for="">no rm</label>
-                        <input type="text" name="no_rm" class="form-control">
+                        <div class="row">
+                            <div class="col-md-2">
+
+                                <input type="text" name="no_rm" class="form-control" placeholder="000000">
+                            </div>
+                        </div>
                         @error('no_rm')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -29,22 +34,31 @@
                     
                     <div class="mb-2">
                         <label for="">jenis kelamin</label>
-                        <select name="jenis_kelamin" id="" class="form-control">
-                            <option value="L">L</option>
-                            <option value="P">P</option>
-                        </select>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <select name="jenis_kelamin" id="" class="form-control">
+                                    <option value="L">L</option>
+                                    <option value="P">P</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-2">
                         <label for="">agama</label>
-                        <select name="agama" id="" class="form-control">
-                            <option value="islam">islam</option>
-                            <option value="kristen">kristen</option>
-                            <option value="katolik">katolik</option>
-                            <option value="hindhu">hindhu</option>
-                            <option value="budha">budha</option>
-                            <option value="kong hu chu">kong hu chu</option>
-                        </select>
+                        <div class="row">
+                            <div class="col-md-4">
+                                
+                                <select name="agama" id="" class="form-control">
+                                    <option value="islam">islam</option>
+                                    <option value="kristen">kristen</option>
+                                    <option value="katolik">katolik</option>
+                                    <option value="hindhu">hindhu</option>
+                                    <option value="budha">budha</option>
+                                    <option value="kong hu chu">kong hu chu</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-2">
@@ -64,26 +78,27 @@
 
                     <div class="mb-2">
                         <label for="">tanggal lahir</label>
-                        <input type="date" name="tanggal_lahir" class="form-control">
-                        @error('tanggal_lahir')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
+                        <div class="row">
+                            <div class="col-md-3">
 
-                    <div class="mb-2">
-                        <label for="">umur</label>
-                        <input type="number" name="umur" class="form-control">
-                        @error('umur')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
+                                <input type="date" name="tanggal_lahir" class="form-control">
+                                @error('tanggal_lahir')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-2">
                         <label for="">no telp</label>
-                        <input type="text" name="no_telp" class="form-control">
-                        @error('no_telp')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input type="text" name="no_telp" class="form-control">
+                                @error('no_telp')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Tambah pasien</button>

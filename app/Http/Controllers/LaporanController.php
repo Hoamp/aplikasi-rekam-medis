@@ -26,8 +26,18 @@ class LaporanController extends Controller
 
         return view("laporan.pasien.index", compact('pasien'));
     }
-    public function pasienCetak(){
-        $pasien = Pasien::latest()->get();
+    public function pasienCetak(Request $request){
+        if(request('cari')){
+            $pasien = Pasien::where('no_rm', request('cari'))->get();
+            
+            if(count($pasien) !== 0){
+                $pasien = Pasien::with(['kelengkapan'])->where('no_rm', request('cari'))->paginate(7);                
+            }else{
+                $pasien = Pasien::with(['kelengkapan'])->where('nama_pasien', 'like', "%".request('cari')."%")->paginate(7);
+            }
+        }else{
+            $pasien = Pasien::with(['kelengkapan'])->latest()->paginate(7);
+        }
 
         return view("laporan.pasien.cetak", compact('pasien'));
     }
@@ -37,9 +47,9 @@ class LaporanController extends Controller
 
         return view("laporan.kelengkapan.index", compact('kelengkapan'));
     }
-    public function kelengkapanCetak(){
-        $kelengkapan = Kelengkapan::with(['pasien', 'detail'])->latest()->get();
-
+    public function kelengkapanCetak(Request $request){
+        
+        $kelengkapan = Kelengkapan::with(['pasien', 'detail'])->latest()->whereBetween('tanggal', [$request->awal, $request->akhir])->get();
 
         return view("laporan.kelengkapan.cetak", compact('kelengkapan'));
     }

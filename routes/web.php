@@ -73,9 +73,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/laporan/petugas/cetak', [LaporanController::class, 'petugasCetak'])->name('laporan.petugas.cetak');
 
     Route::get('/laporan/pasien', [LaporanController::class, 'pasien'])->name('laporan.pasien.index');
-    Route::get('/laporan/pasien/cetak', [LaporanController::class, 'pasienCetak'])->name('laporan.pasien.cetak');
+    Route::post('/laporan/pasien/cetak', [LaporanController::class, 'pasienCetak'])->name('laporan.pasien.cetak');
 
     Route::get('/laporan/kelengkapan', [LaporanController::class, 'kelengkapan'])->name('laporan.kelengkapan.index');
-    Route::get('/laporan/kelengkapan/cetak', [LaporanController::class, 'kelengkapanCetak'])->name('laporan.kelengkapan.cetak');
+    Route::post('/laporan/kelengkapan/cetak', [LaporanController::class, 'kelengkapanCetak'])->name('laporan.kelengkapan.cetak');
 
 });

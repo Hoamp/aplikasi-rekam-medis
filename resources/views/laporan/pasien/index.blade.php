@@ -7,7 +7,18 @@
                 <div class="card-body">
                     <h2>Data pasien</h2>
 
-                    <a href="{{ route('laporan.pasien.cetak') }}" class="btn btn-primary">Cetak</a>
+                    <form action="{{ route('laporan.pasien.cetak') }}" method="POST">
+                        @csrf   
+                        <label for="">Cari pasien</label>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="cari" placeholder="Cari No Rm / Nama">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success" >Cari</button>
+                            </div>
+                        </div>
+                    </form>
 
                     <table class="table">
                         <thead>
@@ -38,6 +49,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $pasien->links() }}
 
                 </div>
             </div>

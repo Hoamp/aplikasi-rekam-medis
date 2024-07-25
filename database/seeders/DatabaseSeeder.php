@@ -17,13 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         Dokter::create([
             'nama_dokter' => 'Agung Prihananto',
             'alamat' => 'Jl. Tasikmadu-Kebakkramat, 04/01, Nangsri Kidul, Nangsri, Kebakkramat, Karanganyar',

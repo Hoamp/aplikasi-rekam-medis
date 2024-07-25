@@ -17,6 +17,7 @@
                             <td>Tempat Lahir </td>
                             <td>Alamat </td>
                             <td>Agama </td>
+                            <td>Tanggal Lahir </td>
                             <td>No Telp </td>
                         </tr>
                         <tr>
@@ -27,6 +28,7 @@
                             <td>{{ $pasien->tempat_lahir }}</td>
                             <td>{{ $pasien->alamat }}</td>
                             <td>{{ $pasien->agama }}</td>
+                            <td>{{ $pasien->tanggal_lahir }}</td>
                             <td>{{ $pasien->no_telp }}</td>
                         </tr>
                     </table>

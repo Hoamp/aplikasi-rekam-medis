@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class PasienController extends Controller
 {
@@ -26,8 +27,11 @@ class PasienController extends Controller
             'no_telp' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
-            'umur' => 'required',
         ]);
+
+        // Hitung umur berdasarkan tanggal lahir
+        $tanggal_lahir = Carbon::parse($request->tanggal_lahir);
+        $umur = $tanggal_lahir->diffInYears(Carbon::now());
 
         Pasien::create([
             'no_rm' => $request->no_rm,
@@ -38,7 +42,7 @@ class PasienController extends Controller
             'no_telp' => $request->no_telp,
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
-            'umur' => $request->umur,
+            'umur' => $umur,
         ]);
 
         return redirect()->route('pasien.index')->with('success', 'Sukses menambah pasien');
